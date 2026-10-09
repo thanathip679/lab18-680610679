@@ -81,11 +81,21 @@ export const zStudentPutBody = z.object({
   emails: zEmails.nullish(),
 });
 
+export const zStudentDeleteBody = z.object({
+  studentId: zStudentId,
+});
+
 ////// Enrollment Validators //////
 
 export const zEnrollmentBody = z.object({
   studentId: zStudentId,
   courseId: zCourseId,
+});
+
+export const zEnrollmentPutBody = z.object({
+  studentId: zStudentId,
+  courseId: zCourseId,
+  newCourseId: zCourseId,
 });
 
 ////// User Validators //////

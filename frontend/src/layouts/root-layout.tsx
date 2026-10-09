@@ -13,6 +13,9 @@ import {
 import { useAuthStore } from "@/lib/auth-store";
 import { useEnrollmentStore } from "@/lib/enrollment-store";
 
+const AUTHOR_NAME = "ธนาธิป ทิพศรี";
+const AUTHOR_STUDENT_ID = "680610679";
+
 export default function RootLayout() {
   const token = useAuthStore((s) => s.token);
   const role = useAuthStore((s) => s.role);
@@ -60,9 +63,8 @@ export default function RootLayout() {
         </main>
         <footer className="border-t p-4 text-center text-xs text-muted-foreground">
           ระบบลงทะเบียนเรียน{" "}
-          {role === "ADMIN"
-            ? "ฝั่งผู้ดูแลระบบ"
-            : "ฝั่งนักศึกษา จัดทำโดย นศ. ชื่อ-สกุล student name รหัส นศ. student id"}
+          {role === "ADMIN" ? "ฝั่งผู้ดูแลระบบ" : "ฝั่งนักศึกษา"} จัดทำโดย นศ.{" "}
+          {AUTHOR_NAME} รหัส นศ. {AUTHOR_STUDENT_ID}
         </footer>
       </SidebarInset>
     </SidebarProvider>
